@@ -1,0 +1,4 @@
+book class {tür isim sayfa yazar vb}
+kullanici kitap ilişkisi 1-N
+kitap ekleme kitap silme CRUD
+
