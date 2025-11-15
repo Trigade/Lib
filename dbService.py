@@ -31,9 +31,14 @@ class DbService:
             cursor.execute(
                 """
                 CREATE TABLE IF NOT EXISTS books(
-                    id UUID PRIMARY KEY,
+                    id TEXT PRIMARY KEY,
                     book_name TEXT NOT NULL,
-                    #AUTHORS!!!
+                    
+                    added_by INTEGER NOT NULL,
+                    writer_id TEXT NOT NULL,
+
+                    FOREIGN KEY (added_by) REFERENCES users(id),
+                    FOREIGN KEY (writer_id) REFERENCES writers(id)
                 )
                 """
             )
@@ -42,8 +47,8 @@ class DbService:
             cursor = conn.cursor()
             cursor.execute(
                 """
-                CREATE TABLE IF NOT EXISTS authors(
-                    id UUID PRIMARY KEY,
+                CREATE TABLE IF NOT EXISTS writers(
+                    id TEXT PRIMARY KEY,
                     writer_name TEXT NOT NULL,
                 )
                 """
