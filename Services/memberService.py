@@ -1,4 +1,4 @@
-from member import Member
+from Models.member import Member
 
 class MemberService:
     def create_user(self,user_name,password):

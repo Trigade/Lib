@@ -1,4 +1,4 @@
-from writer import Writer
+from Models.writer import Writer
 
 class WriterService:
     def create_writer(self,writer):
